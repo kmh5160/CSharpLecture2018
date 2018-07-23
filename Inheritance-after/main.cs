@@ -1,0 +1,58 @@
+using System;
+
+class MainClass {
+  class Book {
+    public string title;
+    public string genre;
+
+    public Book() {
+      Console.WriteLine("Book ctor");
+    }
+
+    public void printBook() {
+      Console.WriteLine("Title: " + title);
+      Console.WriteLine("Genre: " + genre);
+    }
+  }
+  
+  class Novel : Book{
+    public string writer;
+
+    public Novel() {
+      Console.WriteLine("Novel ctor");
+    }
+
+    public void printNov() {
+      printBook();
+      Console.WriteLine("Writer: " + writer);
+    }
+  }
+
+  class Magazine : Book{
+    public int releaseDay;
+
+    public Magazine() {
+      Console.WriteLine("Magazine ctor");
+    }
+
+    public void printMag() {
+      printBook();
+      Console.WriteLine("ReleaseDay: " + releaseDay);
+    }
+  }
+
+  public static void Main (string[] args) {
+    Novel nov = new Novel();
+    nov.title = "The Hobbit";
+    nov.genre = "Fantasy";
+    nov.writer = "JRR T";
+    // nov.printNov();
+    // Console.WriteLine();
+
+    // Magazine mag = new Magazine();
+    // mag.title = "Hello Computer Magazine";
+    // mag.genre = "Computer";
+    // mag.releaseDay = 1;
+    // mag.printMag();
+  }
+}
